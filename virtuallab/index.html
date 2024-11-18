@@ -1,0 +1,178 @@
+<!-- Virtual Lab Main Page with Waves and Get Started Button -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Fluid Mechanics Lab</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+    }
+
+    h1 {
+      font-weight: 300;
+      letter-spacing: 2px;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      letter-spacing: 1px;
+      font-size: 16px;
+      color: #f0f0f0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .header {
+      position: relative;
+      text-align: center;
+      background: linear-gradient(135deg, #5588C9, #8EC5FC);
+      color: white;
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    .inner-header {
+      height: 60vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .waves {
+      position: relative;
+      width: 100%;
+      height: 15vh;
+      margin-bottom: -7px;
+      min-height: 100px;
+      max-height: 150px;
+    }
+
+    .content {
+      position: relative;
+      height: 20vh;
+      text-align: center;
+      background-color: #f8f8f8;
+      color: #333;
+      padding-top: 20px;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    .parallax > use {
+      animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .parallax > use:nth-child(1) {
+      animation-delay: -2s;
+      animation-duration: 7s;
+    }
+
+    .parallax > use:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 10s;
+    }
+
+    .parallax > use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 13s;
+    }
+
+    .parallax > use:nth-child(4) {
+      animation-delay: -5s;
+      animation-duration: 20s;
+    }
+
+    @keyframes move-forever {
+      0% {
+        transform: translate3d(-90px, 0, 0);
+      }
+      100% {
+        transform: translate3d(85px, 0, 0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .waves {
+        height: 40px;
+        min-height: 40px;
+      }
+      .content {
+        height: 30vh;
+      }
+      h1 {
+        font-size: 32px;
+      }
+    }
+
+    /* Get Started Button */
+    .get-started-btn {
+      margin-top: 25px;
+      padding: 12px 28px;
+      font-size: 18px;
+      color: white;
+      background-color: #FF7F50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .get-started-btn:hover {
+      background-color: #FF6347;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <!-- Header Content -->
+  <div class="inner-header">
+    <h1>Welcome to the Virtual Fluid Mechanics Lab</h1>
+    <!-- Get Started Button -->
+    <button class="get-started-btn" onclick="navigateToMain()">Get Started</button>
+  </div>
+
+  <!-- Waves Container -->
+  <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- Footer Content -->
+<div class="footer">
+  <p>Department of Civil Engineering | Virtual Lab Project</p>
+</div>
+
+<script>
+  function navigateToMain() {
+    window.location.href = "main.html"; // Redirect to main.html page
+  }
+</script>
+
+</body>
+</html>

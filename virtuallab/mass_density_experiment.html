@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Mass Density Experiment</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="experiment_styles.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-content responsive-wrapper">
+      <div class="header-logo">
+        <a href="index.html">
+          <h1>Virtual Lab</h1>
+        </a>
+      </div>
+      <div class="header-navigation">
+        <nav class="header-navigation-links">
+          <a href="#">Experiments</a>
+          <a href="#">Theory</a>
+          <a href="#">FAQ</a>
+          <a href="#">About</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Experiment Section -->
+  <main class="main-experiment">
+    <!-- Left Sidebar for Apparatus -->
+    <aside class="apparatus-panel">
+      <h3>Apparatus</h3>
+      <div class="draggable" id="flask-100ml" draggable="true" data-step="1">
+        <p>100-mL Volumetric Flask</p>
+      </div>
+      <div class="draggable" id="erlenmeyer-flask" draggable="true" data-step="8">
+        <p>250-mL Erlenmeyer Flask</p>
+      </div>
+      <div class="draggable" id="thermometer" draggable="true" data-step="5">
+        <p>Thermometer</p>
+      </div>
+      <div class="draggable" id="balance" draggable="true" data-step="2,4">
+        <p>Electric Toploading Balance</p>
+      </div>
+      <div class="draggable" id="water-pipe" draggable="true" data-step="3">
+        <p>Water Pipe</p>
+      </div>
+      <div class="draggable" id="oven" draggable="true" data-step="1">
+        <p>Drying Oven</p>
+      </div>
+      <div class="draggable" id="hot-plate" draggable="true" data-step="8">
+        <p>Hot Plate</p>
+      </div>
+    </aside>
+
+    <!-- Center Lab Bench with Instructions and Drop Zones -->
+    <section class="workspace">
+      <div id="step-instruction" class="instruction-popup">Step 1: Drag the 100-mL Volumetric Flask to the drying oven.</div>
+      <h2>Lab Bench</h2>
+      <div class="drop-zones">
+        <div class="drop-zone" id="drying-oven-drop" data-step="1">
+          <h3>Drying Oven</h3>
+        </div>
+        <div class="drop-zone" id="balance-drop" data-step="2,4">
+          <h3>Balance</h3>
+        </div>
+        <div class="drop-zone" id="water-pipe-drop" data-step="3">
+          <h3>Water Pipe</h3>
+        </div>
+        <div class="drop-zone" id="thermometer-drop" data-step="5">
+          <h3>Thermometer Area</h3>
+        </div>
+        <div class="drop-zone" id="hot-plate-drop" data-step="8">
+          <h3>Hot Plate</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Sidebar for Results and Density Calculation -->
+    <aside class="output-section">
+      <h3>Experiment Results</h3>
+      <div id="results-log">
+        <p id="step-output">Step-by-step results will appear here.</p>
+        <ul id="recorded-values">
+          <!-- Dynamic values for each step will be added here -->
+        </ul>
+      </div>
+      <button id="calculate-results" onclick="showDensityCalculator()" >Calculate Density</button>
+
+      <!-- Density Calculator Section, shown after clicking the button -->
+      <div id="calculation-section" style="display: none;">
+        <h2>Density Calculation</h2>
+        <label for="mass-empty">Mass of Empty Flask (m<sub>1</sub>):</label>
+        <input type="number" id="mass-empty" placeholder="Enter mass in grams" step="0.01">
+        
+        <label for="mass-with-liquid">Mass of Flask with Liquid (m<sub>2</sub>):</label>
+        <input type="number" id="mass-with-liquid" placeholder="Enter mass in grams" step="0.01">
+        
+        <label for="volume">Volume of Liquid (V):</label>
+        <input type="number" id="volume" placeholder="Enter volume in mL" step="0.1" value="100">
+        
+        <button onclick="calculateDensity()">Calculate Density</button>
+        
+        <p>Density (ρ): <span id="density-result">N/A</span> g/mL</p>
+        <div id="recorded-values">
+          <p><strong>Recorded Values:</strong></p>
+          <ul id="values-list">
+            <li>Mass of Empty Flask (m<sub>1</sub>): <span id="value-m1">N/A</span> g</li>
+            <li>Mass of Flask with Liquid (m<sub>2</sub>): <span id="value-m2">N/A</span> g</li>
+            <li>Volume of Liquid (V): <span id="value-v">100</span> mL</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="responsive-wrapper">
+      <p>&copy; 2023 Virtual Lab. All rights reserved.</p>
+      <nav class="footer-navigation">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="experiment_script.js"></script>
+</body>
+</html>

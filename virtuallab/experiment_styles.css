@@ -1,0 +1,186 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Header Styling */
+.header {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main Experiment Layout */
+.main-experiment {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Apparatus Panel */
+.apparatus-panel {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.apparatus-panel h3 {
+  margin-bottom: 15px;
+}
+.draggable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: grab;
+}
+.draggable img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+/* Workspace Styling */
+.workspace {
+  flex: 2;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.workspace h2 {
+  margin-bottom: 20px;
+}
+.drop-zones {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.drop-zone {
+  flex: 1 1 calc(45%);
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  text-align: center;
+  min-height: 100px;
+}
+
+/* Output Section */
+.output-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#results-log {
+  margin-top: 20px;
+}
+#calculate-results {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#calculate-results:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+.footer a {
+  color: #333;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* Apparatus Panel Styling */
+.apparatus-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.draggable img {
+  width: 50px;
+  height: 50px;
+}
+#calculation-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#calculation-section h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#calculation-section label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+#calculation-section input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#calculation-section button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+#calculation-section button:hover {
+  background-color: #45a049;
+}
